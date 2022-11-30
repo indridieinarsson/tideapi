@@ -1,0 +1,85 @@
+
+- sitename: Þorlákshöfn
+  datafile: thorlakshofn
+  latitude: 63.857017
+  longitude: -21.268787
+
+- sitename: Grindavík
+  datafile: grindavik
+  latitude: 63.833062
+  longitude: -22.428503
+
+- sitename: Reykjanestá/Röst
+  datafile: reykjanesta
+  latitude: 63.802289
+  longitude: -22.746457
+
+- sitename: Sandvík
+  datafile: sandvik
+  latitude: 63.853401
+  longitude: -22.743257
+
+- sitename: Garðskagi
+  datafile: gardskagi
+  latitude: 64.100272
+  longitude: -22.707525
+   
+- sitename: Reykjavík
+  datafile: reykjavik
+  latitude:  64.17812039171
+  longitude: -22.0847750983
+
+- sitename: Hvalfjörður
+  datafile: hvalfjordur
+  latitude: 64.288122
+  longitude: -21.903305
+
+- sitename: Grundartangi
+  datafile: grundartangi
+  latitude: 64.352444
+  longitude: -21.736757
+
+- sitename: Borgarfjörður
+  datafile: borgarfjordur
+  latitude: 64.460067
+  longitude: -22.061234
+ 
+- sitename: Löngufjörur
+  datafile: longufjorur
+  latitude:   64.718466
+  longitude: -22.483521
+
+- sitename: Arnarstapi
+  datafile: arnarstapi
+  latitude: 64.72439592474052
+  longitude: -23.59874669586878 
+
+- sitename: Hornvík
+  datafile: hornvik
+  latitude: 66.474571483024258
+  longitude: -22.52242915366633
+
+- sitename: Látravik
+  datafile: latravik
+  latitude: 66.420754
+  longitude: -22.32698
+
+- sitename: Straumnes
+  datafile: straumnes
+  latitude: 66.344874
+  longitude: -22.177081
+
+- sitename: Hólmavík
+  datafile: holmavik
+  latitude: 65.682037
+  longitude: -21.607361
+
+- sitename: Húsavík
+  datafile: husavik
+  latitude: 66.040143
+  longitude: -17.386174
+
+- sitename: Testsite
+  datafile: testsite
+  latitude: 66.4330
+  longitude: -23.1506
