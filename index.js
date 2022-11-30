@@ -26,10 +26,13 @@ app.use(cors());
 app.use(morgan('combined'));
 
 app.get("/stations/list",  tideController.getStationList);
+app.get("/stations/listwithpos",  tideController.getStationListWithPos);
 
-app.get("/stations/table", tideController.getTideTable);//{
+app.get("/stations/table", tideController.getTideTable);
+app.get("/stations/tidesjson", tideController.getTideJson);
+app.get("/stations/currentsjson", tideController.getCurrentJson);
 
 // starting the server
-app.listen(3001, () => {
-  console.log('listening on port 3001');
+app.listen(5000, () => {
+  console.log('listening on port 5000');
 }); 
