@@ -5,7 +5,6 @@ const fs   = require('fs');
 const getStationList = (req, res, next) => {
   var locations = [];
   try {
-    //const doc = yaml.load(fs.readFileSync('/home/indridi/dev/tideapi/users/tidesites.yml', 'utf8'));
     const doc = yaml.load(fs.readFileSync('./data/tidesites.yml', 'utf8'));
     console.log(doc);
     for (const [key, value] of Object.entries(doc)) {
@@ -23,7 +22,6 @@ const getStationList = (req, res, next) => {
 const getStationListWithPos = (req, res, next) => {
   var locations = [];
   try {
-    //const doc = yaml.load(fs.readFileSync('/home/indridi/dev/tideapi/users/tidesites.yml', 'utf8'));
     const doc = yaml.load(fs.readFileSync('./data/tidesites.yml', 'utf8'));
     console.log(doc);
     for (const [key, value] of Object.entries(doc)) {
@@ -46,7 +44,7 @@ const getHarmonics = (station) => {
     // console.log(doc);
     for (const [key, value] of Object.entries(doc)) {
       if (value.datafile == station){
-        let fname = '/home/indridi/dev/tideapi/users/assets/'+value.datafile+'.json';
+        let fname = './users/assets/'+value.datafile+'.json';
         let rawdata = fs.readFileSync(fname);
         let harm = JSON.parse(rawdata);
         // console.log(fname);
@@ -67,8 +65,8 @@ const getCurrHarmonics = (station) => {
     // console.log(doc);
     for (const [key, value] of Object.entries(doc)) {
       if (value.datafile == station){
-        let fname_u = '/home/indridi/dev/tideapi/users/assets/'+value.datafile+'_u.json';
-        let fname_v = '/home/indridi/dev/tideapi/users/assets/'+value.datafile+'_v.json';
+        let fname_u = './users/assets/'+value.datafile+'_u.json';
+        let fname_v = './users/assets/'+value.datafile+'_v.json';
         let rawdata_u = fs.readFileSync(fname_u);
         let harm_u = JSON.parse(rawdata_u);
         let depth_u=harm_u.shift();
@@ -123,6 +121,7 @@ const getTideJson = (req, res, next) => {
   var startDate = new Date(req.query.startdate);
   var endDate = new Date(req.query.enddate);
   var csv = "";
+  var tideres;
   try {
     tidePred = getHarmonics(station);
     tideres = tidePred.getTimelinePrediction({
