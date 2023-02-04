@@ -48,7 +48,11 @@ const getHarmonics = (station) => {
         let rawdata = fs.readFileSync(fname);
         let harm = JSON.parse(rawdata);
         // console.log(fname);
-        tidePred = tideprediction(harm, {phaseKey: 'phase',});
+        lat0=0;
+        for (const [key1, value1] of Object.entries(harm)) {
+            lat0 = lat0+value1.amplitude;
+        }
+        tidePred = tideprediction(harm, {phaseKey: 'phase', offset: lat0});
         return tidePred;
       }
     }
@@ -166,7 +170,8 @@ const getCSVForBangle = (hl) => {
   // console.log("Tides : ");
   // console.log(hl);
   // console.log("**********");
-  let lat0=-2.3*100;
+  // let lat0=-2.3*100;
+  let lat0=0;
 
   filestr = [];
   for (key in hl){
