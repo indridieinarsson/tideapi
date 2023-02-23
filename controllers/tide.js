@@ -124,7 +124,6 @@ const getTideJson = (req, res, next) => {
   // Get document, or throw exception on error
   var startDate = new Date(req.query.startdate);
   var endDate = new Date(req.query.enddate);
-  var csv = "";
   var tideres;
   try {
     tidePred = getHarmonics(station);
@@ -165,6 +164,28 @@ const getTideTable = (req, res, next) => {
   res.send(csv);
 };
 
+const getTideTableJson = (req, res, next) => {
+  var tidepred;
+  let station = req.query.stationid;
+  // Get document, or throw exception on error
+  var startDate = new Date(req.query.startdate);
+  var endDate = new Date(req.query.enddate);
+  try {
+    tidePred = getHarmonics(station);
+    var highLow = tidePred.getExtremesPrediction({ // To calculate high/low tide
+      start: startDate,
+      end: endDate,
+      labels: {
+        //optional human-readable labels
+        high: 'High tide',
+        low: 'Low tide',
+      },
+    });
+  } catch (e) {
+    console.log(e);
+  }
+  res.send(highLow);
+};
 
 const getCSVForBangle = (hl) => {
   // console.log("Tides : ");
@@ -188,6 +209,7 @@ module.exports = {
   getStationList,
   getStationListWithPos,
   getTideTable,
+  getTideTableJson,
   getTideJson,
   getCurrentJson
 };

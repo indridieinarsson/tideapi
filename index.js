@@ -29,6 +29,7 @@ app.get("/stations/list",  tideController.getStationList);
 app.get("/stations/listwithpos",  tideController.getStationListWithPos);
 
 app.get("/stations/table", tideController.getTideTable);
+app.get("/stations/tableJson", tideController.getTideTableJson);
 app.get("/stations/tidesjson", tideController.getTideJson);
 app.get("/stations/currentsjson", tideController.getCurrentJson);
 
